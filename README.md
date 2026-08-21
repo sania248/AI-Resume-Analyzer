@@ -1,67 +1,68 @@
 # 📄 AI Resume Analyzer
 
-An AI-powered resume analysis application that helps candidates understand how well their resume matches a specific job description.
+An AI-powered web application that analyzes resumes, evaluates resume quality, matches resumes against job descriptions, and provides personalized AI-powered insights.
 
-The application extracts structured information from a resume, evaluates its overall quality, identifies technical skills, compares those skills with job requirements, and uses a Retrieval-Augmented Generation (RAG) pipeline to provide contextual AI-powered insights.
-
----
-
-## 🎯 About the Project
-
-Job seekers often struggle to understand whether their resume is relevant to a particular job and which skills they need to improve.
-
-The **AI Resume Analyzer** addresses this problem by combining traditional resume parsing, rule-based analysis, semantic search, and generative AI into a single application.
-
-A user can upload a PDF resume and receive:
-
-- Resume information and detected skills
-- A resume quality score
-- Structured resume sections
-- Resume improvement suggestions
-- Job-specific skill matching
-- Matching and missing skills
-- Resume–job match percentage
-- AI-generated answers about their suitability for a role
-
-The project demonstrates how **NLP, vector embeddings, information retrieval, and generative AI** can be combined to build a practical career-assistance application.
+The project combines **PDF parsing, rule-based resume analysis, semantic search, vector embeddings, FAISS, and Generative AI** to create an end-to-end resume analysis system.
 
 ---
 
-## 🚀 Key Features
+## 🎯 Project Overview
 
-### 📄 Resume Parsing
+Finding out whether a resume is suitable for a particular job can be difficult for students and job seekers.
 
-- Upload a resume in PDF format
-- Extract resume text using `pdfplumber`
-- Detect candidate name, email, and phone number
-- Identify technical skills
-- Detect and organize resume sections such as:
-  - Objective
-  - Education
-  - Projects
-  - Internships
-  - Technical Skills
-  - Achievements / Activities
+This project provides a single platform where users can upload their resume, analyze its structure and skills, compare it with a target job description, and ask an AI assistant questions about their profile.
 
-### 📊 Resume Quality Analysis
+### The application performs four major tasks:
 
-The application evaluates the structure of the resume based on:
+**1. Resume Analysis**  
+Extracts important information and evaluates the structure of the resume.
+
+**2. Skill Analysis**  
+Detects technical skills from the resume and job description.
+
+**3. Job Matching**  
+Compares resume skills with job requirements and identifies skill gaps.
+
+**4. AI Resume Assistant**  
+Uses RAG-based retrieval to provide answers based on the user's resume and target job description.
+
+---
+
+## ✨ Features
+
+### 📄 Resume Parser
+
+Upload a PDF resume and automatically extract:
+
+- Name
+- Email
+- Phone number
+- Technical skills
+- Resume sections
+- Projects
+- Education
+- Internships
+- Achievements / Activities
+
+### 📊 Resume Scoring
+
+The application evaluates the resume based on important structural elements such as:
 
 - Contact information
-- Technical skills
-- Objective / summary
+- Skills
+- Objective / Summary
 - Education
 - Projects
-- Experience / internships
+- Experience / Internships
 - Certifications
 
-It generates an overall score out of 100 and provides improvement suggestions.
+The analyzer generates a **resume score out of 100** along with improvement suggestions.
 
 ### 🎯 Job Description Matching
 
-Users can paste a job description to compare it against their resume.
+Paste a job description and compare it with the uploaded resume.
 
-The system identifies:
+The system provides:
 
 - Required skills
 - Matching skills
@@ -71,70 +72,55 @@ The system identifies:
 
 ### 🤖 AI Resume Assistant
 
-The application includes an AI assistant that allows users to ask questions such as:
+Users can ask questions such as:
 
-> "Why am I a good fit for this job?"
+- Why am I a good fit for this role?
+- What skills am I missing?
+- Which projects are most relevant to this job?
+- How does my resume align with this position?
 
-> "What skills am I missing for this role?"
-
-> "Which projects in my resume are most relevant to this position?"
-
-The assistant generates responses using the resume and job description as contextual information.
+The AI assistant uses information retrieved from the resume and job description to generate contextual responses.
 
 ---
 
-## 🧠 Retrieval-Augmented Generation (RAG)
+# 🧠 AI / RAG Architecture
 
-One of the main technical components of the project is the RAG pipeline used by the AI Resume Assistant.
+The AI assistant uses a **Retrieval-Augmented Generation (RAG)** approach.
 
-Instead of directly sending the entire resume to the language model, the application:
-
-1. Extracts the resume content
-2. Organizes the information into meaningful sections
-3. Creates text chunks from the resume and job description
-4. Converts the chunks into vector embeddings
-5. Stores the embeddings in a FAISS index
-6. Converts the user's question into an embedding
-7. Retrieves the most relevant resume/job information
-8. Provides the retrieved context to the language model
-9. Generates a contextual answer
-
-### RAG Architecture
+Instead of relying only on the language model's general knowledge, relevant information is first retrieved from the uploaded resume and job description.
 
 ```text
-             Resume PDF
-                 │
-                 ▼
-          PDF Text Extraction
-                 │
-                 ▼
-        Resume Section Parsing
-                 │
-                 ▼
-            Text Chunks
-                 │
-                 ▼
-       Sentence Transformer
-                 │
-                 ▼
-           Vector Embeddings
-                 │
-                 ▼
-              FAISS
-          Vector Database
-                 │
-                 │
-       User Question
-                 │
-                 ▼
-        Query Embedding
-                 │
-                 ▼
-       Relevant Context
-          Retrieval
-                 │
-                 ▼
-        Hugging Face LLM
-                 │
-                 ▼
-          AI Response
+Resume PDF
+    │
+    ▼
+PDF Text Extraction
+    │
+    ▼
+Resume Section Parsing
+    │
+    ▼
+Text Chunking
+    │
+    ▼
+Sentence Transformer
+    │
+    ▼
+Vector Embeddings
+    │
+    ▼
+FAISS Vector Index
+    │
+    │
+    ├──────── User Question
+    │                 │
+    │                 ▼
+    │          Query Embedding
+    │                 │
+    ▼                 ▼
+Relevant Context ◄────┘
+    │
+    ▼
+Hugging Face LLM
+    │
+    ▼
+Contextual AI Response
