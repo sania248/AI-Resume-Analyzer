@@ -124,3 +124,34 @@ Hugging Face LLM
     │
     ▼
 Contextual AI Response
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+|---|---|
+| Programming | Python |
+| Web Application | Streamlit |
+| PDF Processing | pdfplumber |
+| Text Processing | Regular Expressions |
+| Embeddings | Sentence Transformers |
+| Vector Search | FAISS |
+| Generative AI | Hugging Face Inference API |
+| Numerical Processing | NumPy |
+| Version Control | Git, GitHub |
+
+---
+
+## 🏗️ Project Structure
+
+```text
+AI-Resume-Analyzer/
+│
+├── app.py              # Streamlit application
+├── parser.py           # Resume PDF parsing
+├── analyzer.py         # Resume scoring and JD matching
+├── rag.py              # RAG pipeline and AI assistant
+├── skills.txt          # Skill vocabulary
+├── requirements.txt    # Python dependencies
+├── README.md           # Project documentation
+└── .gitignore          # Ignored files and secrets
