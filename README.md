@@ -155,3 +155,32 @@ AI-Resume-Analyzer/
 ├── requirements.txt    # Python dependencies
 ├── README.md           # Project documentation
 └── .gitignore          # Ignored files and secrets
+## 💡 What I Learned
+
+Through this project, I gained practical experience with:
+
+- PDF document processing using `pdfplumber`
+- Regular-expression-based information extraction
+- Resume section parsing
+- Rule-based resume scoring
+- Job-description skill extraction
+- Resume–job skill matching
+- Sentence embeddings using Sentence Transformers
+- Vector similarity search using FAISS
+- Retrieval-Augmented Generation (RAG)
+- Hugging Face Inference API
+- Streamlit application development
+- Managing API credentials securely
+- Git and GitHub for version control
+## 🔮 Future Improvements
+
+The project can be further enhanced with the following features:
+
+- **ATS Compatibility Analysis** – Analyze resume formatting and keyword usage for ATS systems.
+- **Semantic Job Matching** – Use embeddings to compare the resume and job description beyond exact skill matching.
+- **DOCX Resume Support** – Allow users to upload Word documents in addition to PDFs.
+- **Resume Recommendations** – Provide more detailed, role-specific suggestions for improving the resume.
+- **Multiple Job Comparison** – Compare a resume against multiple job descriptions and identify the best matches.
+- **Downloadable Reports** – Generate a downloadable PDF report containing the complete resume analysis.
+- **Cloud Deployment** – Deploy the application so users can access it online.
+- **Additional LLM Providers** – Support multiple AI model providers for greater flexibility and reliability.
