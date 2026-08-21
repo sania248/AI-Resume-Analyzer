@@ -1,0 +1,41 @@
+Python
+Java
+C
+C++
+C#
+JavaScript
+TypeScript
+HTML
+CSS
+React
+Node.js
+Express.js
+MongoDB
+MySQL
+SQL
+PostgreSQL
+Oracle
+Machine Learning
+Deep Learning
+Artificial Intelligence
+Data Science
+Natural Language Processing
+NLP
+RAG
+Generative AI
+LLM
+LangChain
+FAISS
+TensorFlow
+PyTorch
+Scikit-learn
+Pandas
+NumPy
+Tableau
+Power BI
+Git
+GitHub
+Docker
+AWS
+Azure
+Google Cloud
