@@ -475,7 +475,7 @@ def generate_rag_response(
         index,
         top_k=5
     )
-
+    print(retrieved)
 
     # ==================================================
     # BUILD CONTEXT
